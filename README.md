@@ -20,6 +20,12 @@ go build -o ptt-watcher
 ./ptt-watcher
 ```
 
+```bash  
+eval $(minikube docker-env)
+docker build -t ptt-watcher .
+kubectl apply -f ptt-watcher.yaml 
+```
+
 編輯設定檔於運行目錄下, 參考[範例](#sample-config):
 
 ```bash

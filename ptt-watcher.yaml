@@ -1,0 +1,25 @@
+ apiVersion: apps/v1
+ kind: Deployment
+ metadata:
+   creationTimestamp: null
+   labels:
+     app: ptt-watcher
+   name: ptt-watcher
+ spec:
+   replicas: 1
+   selector:
+     matchLabels:
+       app: ptt-watcher
+   strategy: {}
+   template:
+     metadata:
+       creationTimestamp: null
+       labels:
+         app: ptt-watcher
+     spec:
+       containers:
+       - image: ptt-watcher
+         name: ptt-watcher
+         resources: {}
+         imagePullPolicy: Never
+ status: {}
