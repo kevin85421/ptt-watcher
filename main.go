@@ -29,7 +29,7 @@ func main() {
 
 	// Start notifiers
 	go slackNotifier()
-	go lineNotifier()
+	// go lineNotifier()
 
 	// Start feed watchers
 	for _, sub := range config.Subscriptions {

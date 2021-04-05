@@ -58,9 +58,18 @@ func watcher(sub Subscription) {
 				// Add this entry to notification
 				item := NotificationMessageItem{entry.Link.Href, entry.Title}
 				notification.Items = append(notification.Items, item)
-				log.Printf("%s Found new entry: %s", bold(sub.Name), entry.Title)
+				log.Printf("%s Found new entry: %s / Author: %s", bold(sub.Name), entry.Title, entry.Author.Name)
 				continue
 			}
+
+            // Filter Author
+            if filteredAny(entry.Author.Name, sub.Filters) {
+                // Add this entry to notification
+                item := NotificationMessageItem{entry.Link.Href, entry.Title}
+                notification.Items = append(notification.Items, item)
+                log.Printf("%s Found new entry: %s / Author: %s", bold(sub.Name), entry.Title, entry.Author.Name)
+                continue
+            }
 		}
 
 		// Send notification if any interesting post was found

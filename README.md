@@ -14,11 +14,10 @@
  * 透過 RSS feed 更新資料無需帳號密碼
 
 ## Quickstart
-
-直接透過 `go get` 安裝:
-
 ```bash
-go get github.com/kfei/ptt-watcher
+go mod vendor
+go build -o ptt-watcher
+./ptt-watcher
 ```
 
 編輯設定檔於運行目錄下, 參考[範例](#sample-config):
