@@ -20,7 +20,10 @@ go build -o ptt-watcher
 ./ptt-watcher
 ```
 
-```bash  
+```bash
+# Step1: Create your config.json file
+
+# Step2:
 eval $(minikube docker-env)
 docker build -t ptt-watcher .
 kubectl apply -f ptt-watcher.yaml 
